@@ -1,16 +1,30 @@
 package com.example.gustavo.lista;
 
+import android.arch.persistence.room.ColumnInfo;
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.support.annotation.NonNull;
 
 /**
  * Created by Gustavo on 20/02/2018.
  */
-
+@Entity (tableName = "users")
 public class ModeloLlenar implements Parcelable {
+    @NonNull
+    @PrimaryKey(autoGenerate = true)
+
+    @ColumnInfo(name = "nombre")
     private String nombre;
+
+    @ColumnInfo(name = "codigo")
     private int codigo;
+
+    @ColumnInfo(name = "descripcion")
     private String descripcion;
+    
+    @ColumnInfo(name = "lugar")
     private String lugar;
 
     public ModeloLlenar(String nombre, int codigo, String descripcion, String lugar) {
