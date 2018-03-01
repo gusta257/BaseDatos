@@ -2,6 +2,7 @@ package com.example.gustavo.lista;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.PrimaryKey;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -18,15 +19,19 @@ public class ModeloLlenar implements Parcelable {
     @ColumnInfo(name = "nombre")
     private String nombre;
 
-    @ColumnInfo(name = "codigo")
+    @ColumnInfo(name = "id")
     private int codigo;
 
     @ColumnInfo(name = "descripcion")
     private String descripcion;
-    
+
     @ColumnInfo(name = "lugar")
     private String lugar;
 
+    public ModeloLlenar() {
+    }
+
+    @Ignore
     public ModeloLlenar(String nombre, int codigo, String descripcion, String lugar) {
         this.nombre = nombre;
         this.codigo = codigo;
@@ -90,5 +95,10 @@ public class ModeloLlenar implements Parcelable {
         parcel.writeInt(codigo);
         parcel.writeString(descripcion);
         parcel.writeString(lugar);
+    }
+
+    @Override
+    public String toString() {
+        return new StringBuilder(nombre).append("\n").append(lugar).append("\n").append(descripcion).toString();
     }
 }
