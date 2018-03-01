@@ -27,7 +27,7 @@ public interface UserDAO {
     void  updateUser(ModeloLlenar ... users);
 
     @Delete
-    void deleteUser(ModeloLlenar ... users);
+    void deleteUser(ModeloLlenar user);
 
     @Query("DELETE FROM users")
     void deleteAllUsers();

@@ -23,7 +23,7 @@ public interface IUserDataSource {
 
     void  updateUser(ModeloLlenar ... users);
 
-    void deleteUser(ModeloLlenar ... users);
+    void deleteUser(ModeloLlenar user);
 
     void deleteAllUsers();
 }
