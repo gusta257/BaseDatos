@@ -23,6 +23,7 @@ public class UserRepository implements IUserDataSource {
         }
         return mInstance;
     }
+
     @Override
     public Flowable<ModeloLlenar> getUserById(int userId) {
         return mLocalDataSource.getUserById(userId);
@@ -36,24 +37,20 @@ public class UserRepository implements IUserDataSource {
     @Override
     public void insertUser(ModeloLlenar... users) {
         mLocalDataSource.insertUser(users);
-
     }
 
     @Override
     public void updateUser(ModeloLlenar... users) {
         mLocalDataSource.updateUser(users);
-
     }
 
     @Override
     public void deleteUser(ModeloLlenar users) {
         mLocalDataSource.deleteUser(users);
-
     }
 
     @Override
     public void deleteAllUsers() {
         mLocalDataSource.deleteAllUsers();
-
     }
 }

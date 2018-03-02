@@ -12,15 +12,16 @@ import android.support.annotation.NonNull;
  * Created by Gustavo on 20/02/2018.
  */
 @Entity (tableName = "users")
-public class ModeloLlenar implements Parcelable {
+public class ModeloLlenar implements Parcelable{
     @NonNull
     @PrimaryKey(autoGenerate = true)
+
+    @ColumnInfo(name = "id")
+    private int id;
 
     @ColumnInfo(name = "nombre")
     private String nombre;
 
-    @ColumnInfo(name = "id")
-    private int codigo;
 
     @ColumnInfo(name = "descripcion")
     private String descripcion;
@@ -32,16 +33,14 @@ public class ModeloLlenar implements Parcelable {
     }
 
     @Ignore
-    public ModeloLlenar(String nombre, int codigo, String descripcion, String lugar) {
+    public ModeloLlenar(String nombre,  String descripcion, String lugar) {
         this.nombre = nombre;
-        this.codigo = codigo;
         this.descripcion = descripcion;
         this.lugar = lugar;
     }
 
     protected ModeloLlenar(Parcel in) {
         nombre = in.readString();
-        codigo = in.readInt();
         descripcion = in.readString();
         lugar = in.readString();
     }
@@ -68,12 +67,12 @@ public class ModeloLlenar implements Parcelable {
 
     public void setNombre(String nombre) { this.nombre = nombre; }
 
-    public int getCodigo() {
-        return codigo;
+    public int getId() {
+        return id;
     }
 
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getDescripcion() {
@@ -92,7 +91,6 @@ public class ModeloLlenar implements Parcelable {
     @Override
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeString(nombre);
-        parcel.writeInt(codigo);
         parcel.writeString(descripcion);
         parcel.writeString(lugar);
     }

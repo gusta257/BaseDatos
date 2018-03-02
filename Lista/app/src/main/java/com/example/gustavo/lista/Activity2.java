@@ -17,7 +17,7 @@ public class Activity2 extends AppCompatActivity {
         String nombre = modeloLlenar.getNombre();
         String descripcion = modeloLlenar.getDescripcion();
         String lugar = modeloLlenar.getLugar();
-        int codigo = modeloLlenar.getCodigo();
+
 
         TextView textView1 = findViewById(R.id.texto1_Activity2);
         textView1.setText(nombre);

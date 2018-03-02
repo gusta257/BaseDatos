@@ -1,5 +1,6 @@
 package com.example.gustavo.lista;
 
+import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
@@ -13,11 +14,12 @@ import io.reactivex.Flowable;
  * Created by Gustavo on 28/02/2018.
  */
 
+@Dao
 public interface UserDAO {
-    @Query("SELECT * FROM users WHERE codigo=:userId")
+    @Query("SELECT * FROM users WHERE id=:userId")
     Flowable<ModeloLlenar> getUserById(int userId);
 
-    @Query("SELECT* FROM users")
+    @Query("SELECT * FROM users")
     Flowable<List<ModeloLlenar>>getAllUsers();
 
     @Insert
@@ -31,7 +33,4 @@ public interface UserDAO {
 
     @Query("DELETE FROM users")
     void deleteAllUsers();
-
-
-
 }
