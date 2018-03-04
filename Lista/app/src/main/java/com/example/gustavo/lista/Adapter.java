@@ -1,5 +1,10 @@
 package com.example.gustavo.lista;
 
+
+/**
+ * Created by Gustavo on 3/03/2018.
+ */
+
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -48,9 +53,10 @@ public class Adapter extends BaseAdapter {
         TextView descripcion = (TextView)convertView.findViewById(R.id.descripcion);
         TextView lugar = (TextView)convertView.findViewById(R.id.lugar);
 
-        nombre.setText(arrayList.get(i).getNombre());
-        descripcion.setText(arrayList.get(i).getDescripcion());
-        lugar.setText(arrayList.get(i).getLugar());
+        ModeloLlenar ctSend = (ModeloLlenar) arrayList.get(i);
+        nombre.setText(ctSend.getNombre());
+        descripcion.setText(ctSend.getInfo().getDescripcion());
+        lugar.setText(ctSend.getInfo().getLugar());
 
         return convertView;
     }

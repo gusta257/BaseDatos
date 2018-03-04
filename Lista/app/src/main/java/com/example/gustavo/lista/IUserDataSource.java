@@ -15,7 +15,6 @@ import io.reactivex.Flowable;
 
 public interface IUserDataSource {
 
-    Flowable<ModeloLlenar> getUserById(int userId);
 
     Flowable<List<ModeloLlenar>>getAllUsers();
 

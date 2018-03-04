@@ -24,11 +24,6 @@ public class UserDataSource implements IUserDataSource {
     }
 
     @Override
-    public Flowable<ModeloLlenar> getUserById(int userId) {
-        return userDAO.getUserById(userId);
-    }
-
-    @Override
     public Flowable<List<ModeloLlenar>> getAllUsers() {
         return userDAO.getAllUsers();
     }
@@ -41,18 +36,16 @@ public class UserDataSource implements IUserDataSource {
     @Override
     public void updateUser(ModeloLlenar... users) {
         userDAO.updateUser(users);
-
     }
 
     @Override
     public void deleteUser(ModeloLlenar  user) {
         userDAO.deleteUser(user);
-
     }
 
     @Override
     public void deleteAllUsers() {
         userDAO.deleteAllUsers();
-
     }
 }
+

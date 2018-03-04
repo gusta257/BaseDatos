@@ -1,5 +1,4 @@
 package com.example.gustavo.lista;
-
 import android.arch.persistence.db.SupportSQLiteOpenHelper;
 import android.arch.persistence.room.Database;
 import android.arch.persistence.room.DatabaseConfiguration;

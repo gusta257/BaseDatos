@@ -2,6 +2,8 @@ package com.example.gustavo.lista;
 
 import java.util.List;
 
+import java.util.List;
+
 import io.reactivex.Flowable;
 
 /**
@@ -22,11 +24,6 @@ public class UserRepository implements IUserDataSource {
             mInstance = new UserRepository(mLocalDataSource);
         }
         return mInstance;
-    }
-
-    @Override
-    public Flowable<ModeloLlenar> getUserById(int userId) {
-        return mLocalDataSource.getUserById(userId);
     }
 
     @Override
@@ -54,3 +51,4 @@ public class UserRepository implements IUserDataSource {
         mLocalDataSource.deleteAllUsers();
     }
 }
+

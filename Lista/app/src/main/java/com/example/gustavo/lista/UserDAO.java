@@ -1,5 +1,6 @@
 package com.example.gustavo.lista;
 
+
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
@@ -34,3 +35,4 @@ public interface UserDAO {
     @Query("DELETE FROM users")
     void deleteAllUsers();
 }
+
